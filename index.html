@@ -1,105 +1,245 @@
-<html><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arjun Shah</title>
     <style>
-        body { 
-          line-height: 1.4;
-            font-size: 16px;
-            padding: 0 10px;
-            margin: 50px auto;
-            max-width: 650px;
+        /* Define your custom Forum font */
+        @font-face {
+            font-family: 'Forum';
+            src: url('Forum/Forum-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
         }
-    
-        #maincontent
-        {
-        max-width:42em;margin:15 auto;
-    
+        
+        /* Base styles */
+        :root {
+            --primary-color: #333;
+            --secondary-color: #555;
+            --accent-color: #0066cc;
+            --background-color: #fff;
+            --light-gray: #f5f5f5;
+        }
+        
+        body {
+            font-family: 'Forum', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--primary-color);
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: var(--light-gray);
+            padding: 15px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .site-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0;
+            font-family: 'Forum', serif;
+        }
+        
+        .site-title a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-links a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        /* Content styles */
+        .content {
+            padding: 40px 0;
+        }
+        
+        h1, h2, h3 {
+            color: var(--primary-color);
+            font-family: 'Forum', serif;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+        
+        p {
+            margin-bottom: 20px;
+        }
+        
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        ul {
+            margin-bottom: 25px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--light-gray);
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 40px;
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
         }
     </style>
-        
-    <title>Arjun Shah</title>
-    </head>
-    
-    
-    <body>
-    <div id="maincontent" style="margin-top:70px">
-      <h2>Arjun Shah</h2>
-    
-        <p>I love math, reading, and building things</p>
-        
-        Some things about me:
-        <ul>
-            <li>Grew up in Westampton, NJ</li>
-            <li>Went to the University of Pennsylvania where I studied Math and CIS</li>
-            <li>Worked as a quant researcher at an options market making firm</li>
-            <li>I've been training MMA for over a year and have done two fights</li>
-            <li>Avid poker player - I read a lot of theory but also understand when theory fails</li>
-            <li>Favorite Book: <a href="https://en.wikipedia.org/wiki/A_Little_Life">A Little Life</a> or <a href="https://en.wikipedia.org/wiki/Siddhartha_(novel)">Siddhartha</a> </li>
-            <li>Currently reading <a href="https://en.wikipedia.org/wiki/The_Brothers_Karamazov">The Brothers Karamazov</a></li>
-        </ul>
+</head>
+<body>
+    <nav>
+        <div class="container nav-container">
+            <h1 class="site-title"><a href="index.html">Arjun Shah</a></h1>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="reading.html">Reading</a>
+            </div>
+        </div>
+    </nav>
 
-        Work Experience:
-        <ul>
-            <li>Quant Researcher @ Korman Communities</li>
+    <div class="container content">
+        <div class="section">
+            <p>I love math, reading, and building things</p>
+            
+            <div class="section-title">Some things about me:</div>
             <ul>
-                <li><em>What they do</em>: Real estate investment firm</li>
-                <li><em>What I did</em>: Designed and developed their data infrastructure; Worked on a variety of modeling and automation tasks for their property portfolio</li>
-                <li><em>What I learned</em>: Smallest team I've worked on and the most responsibility I've had in a job. Felt like working at a startup as we had to build and move fast. </li>
+                <li>Grew up in Westampton, NJ</li>
+                <li>Went to the University of Pennsylvania where I studied Math and CIS</li>
+                <li>Worked as a quant researcher at an options market making firm</li>
+                <li>I've been training MMA for over a year and have done two fights</li>
+                <li>Avid poker player - I read a lot of theory but also understand when theory fails</li>
+                <li>Favorite Book: <a href="https://en.wikipedia.org/wiki/A_Little_Life">A Little Life</a> or <a href="https://en.wikipedia.org/wiki/Siddhartha_(novel)">Siddhartha</a></li>
+                <li>Currently reading <a href="https://www.amazon.com/Technological-Republic-Power-Belief-Future/dp/0593798694">The Technological Republic</a></li>
             </ul>
-            <li>Quant Researcher @ Albatross Labs</li>
-            <ul>
-                <li><em>What they do</em>: Options market-making firm</li>
-                <li><em>What I did</em>: Worked on their pricing engine (how we go from bids/asks to theos) as well as a variety of side projects ranging from vol trading to low-latency code optimizations </li>
-                <li><em>What I learned</em>: The most rewarding work experience I've had to date - learned how to build and iterate fast, write generalizable code, and optimize existing code for speed </li>
-            </ul>
-            <li>Software Engineer @ CaseCtrl</li>
-            <ul>
-                <li><em>What they do</em>: Tech startup focused on automating surgical scheduling processes</li>
-                <li><em>What I did</em>: Worked on their analytics dashboard</li>
-                <li><em>What I learned</em>: First official coding/engineering job; Hadn't worked on large scale projects before this so it gave me a taste for that level of complexity</li>
-            </ul>
+        </div>
 
-        </ul>
-    
-        <!-- Some things I believe:
-        <ul>
-            <li>Theory fails - some examples</li>
+        <div class="section">
+            <h2>Work Experience</h2>
             <ul>
-                <li>Poker</li>
-                <ul>
-                    <li>I've played against people with a variety of ranges, from fishes that only play AA, AK, or KK, to quants that have memorized <a href="https://www.amazon.com/Mathematics-Poker-Bill-Chen/dp/1886070253">Bill Chen's Book</a></li>
-                    <li>People are always exploitable, we make mistakes and it's your duty to punish them for theirs. I enjoy expanding my range into unnatural territories. Your mistakes - my mistakes = edge</li>
-                </ul>
+                <li>
+                    <strong>Quant Researcher @ Korman Communities</strong>
+                    <ul>
+                        <li><em>What they do</em>: Real estate investment firm</li>
+                        <li><em>What I did</em>: Designed and developed their data infrastructure; Worked on a variety of modeling and automation tasks for their property portfolio</li>
+                        <li><em>What I learned</em>: Smallest team I've worked on and the most responsibility I've had in a job. Felt like working at a startup as we had to build and move fast.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Quant Researcher @ Albatross Labs</strong>
+                    <ul>
+                        <li><em>What they do</em>: Options market-making firm</li>
+                        <li><em>What I did</em>: Worked on their pricing engine (how we go from bids/asks to theos) as well as a variety of side projects ranging from vol trading to low-latency code optimizations</li>
+                        <li><em>What I learned</em>: The most rewarding work experience I've had to date - learned how to build and iterate fast, write generalizable code, and optimize existing code for speed</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Software Engineer @ CaseCtrl</strong>
+                    <ul>
+                        <li><em>What they do</em>: Tech startup focused on automating surgical scheduling processes</li>
+                        <li><em>What I did</em>: Worked on their analytics dashboard</li>
+                        <li><em>What I learned</em>: First official coding/engineering job; Hadn't worked on large scale projects before this so it gave me a taste for that level of complexity</li>
+                    </ul>
+                </li>
             </ul>
-            <li>Failure is good as long as there are short cycle times between each of them</li>
-            <ul>
-                <li>(Apologies for being trite) It is okay to fail, but dwelling on failures and beating yourself up about them is futile</li>
-            </ul>
-            <li>99.9% of self-help books are nonsense</li>
-            <ul>
-                <li>Most self-help books can be summarized in a few paragraphs and the message/nuances of the book will not be diluted greatly</li>
-                <li>These books aim to capitilize on those that want hits of motivation, rather those that are disciplined (or even obsessed)</li>
-                <li>Fiction books are a better self-help tool - chain yourself to a character in a story and feel what they feel</li>
-            </ul>
-            <li> <em>Adding more later</em> </li>
-        </ul>
-     -->
-        Current Interests:
-        <em>I have been blessed/cursed with too many interests</em>
-        <ul>
-            <li>Building useful software</li>
-            <li>Pure Math (Differential Geometry)</li>
-            <li>Options Trading/Market Making</li>
-            <li>Defense Tech</li>
-            <li>American Industrial/Manufacturing Tech</li>
-        </ul>
+        </div>
 
-        Contact Information:
-        <ul>
-            <li>Email: arjunsshahh@gmail.com</li>
-            <li>LinkedIn: <a href="https://www.linkedin.com/in/arjunshahh/">arjunshahh</a></li>
-            <li>X: <a href="https://x.com/arjunshahh">arjunshahh</a></li>
-            <li>Instagram: <a href="https://www.instagram.com/arjunshahh/">arjunshahh</a></li>
-        </ul>
-    
+        <div class="section">
+            <h2>Current Interests</h2>
+            <p><em>I have been blessed/cursed with too many interests</em></p>
+            <ul>
+                <li>Building useful software</li>
+                <li>Pure Math (Differential Geometry)</li>
+                <li>Options Trading/Market Making</li>
+                <li>Defense Tech</li>
+                <li>American Industrial/Manufacturing Tech</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Contact Information</h2>
+            <ul>
+                <li>Email: <a href="mailto:arjunsshahh@gmail.com">arjunsshahh@gmail.com</a></li>
+                <li>LinkedIn: <a href="https://www.linkedin.com/in/arjunshahh/">arjunshahh</a></li>
+                <li>X: <a href="https://x.com/arjunshahh">arjunshahh</a></li>
+                <li>Instagram: <a href="https://www.instagram.com/arjunshahh/">arjunshahh</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Arjun Shah. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
         
         

@@ -268,7 +268,7 @@
         
         /* Update the book-card-clone styles to prevent unwanted hover effects */
         .book-card-clone {
-            position: fixed; /* Change from absolute to fixed for better positioning */
+            position: fixed;
             border: 1px solid #eee;
             border-radius: 8px;
             padding: 15px;
@@ -278,7 +278,8 @@
             width: calc(100% - 40px);
             max-width: 600px;
             left: 50%;
-            transform: translateX(-50%);
+            top: 50%;
+            transform: translate(-50%, -50%);
             opacity: 0;
             transition: opacity 0.3s;
         }
@@ -289,7 +290,7 @@
         
         /* Prevent any hover effects on the clone */
         .book-card-clone:hover {
-            transform: translateX(-50%) !important; /* Force it to stay centered */
+            transform: translate(-50%, -50%) !important;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2) !important;
         }
         
@@ -370,15 +371,6 @@
         <div class="section">
             <h2>Currently Reading</h2>
             <div class="book-grid">
-                <div class="book-card">
-                    <div class="book-title">The Technological Republic</div>
-                    <div class="book-author">Alexander Karp</div>
-                    <!-- <div class="book-rating" data-rating="4"></div> -->
-                    <!-- <div class="book-headline">
-                    </div>
-                    <div class="book-notes">
-                    </div> -->
-                </div>
 
                 <div class="book-card">
                     <div class="book-title">Lonesome Dove</div>
@@ -437,6 +429,21 @@
                 <button class="sort-btn" data-sort="rating-low">Rating (Low to High)</button>
             </div>
             <div class="book-grid" id="read-books-grid">
+
+                <div class="book-card">
+                    <div class="book-title">The Technological Republic</div>
+                    <div class="book-author">Alexander Karp</div>
+                    <div class="book-rating" data-rating="5"></div>
+                    <div class="book-headline">
+                        "A freedom of motion, to maneuver at will, can masquerade as an imitation of power. A willingness to constrain choice, to cast oneself to the mast, is often the best, if not only, route to creative production, for either a company or a culture."
+                    </div>
+                    <div class="book-notes">
+                        adding soon...
+                    </div>
+                </div>
+
+
+
                 <div class="book-card">
                     <div class="book-title">Thinking in Systems</div>
                     <div class="book-author">Donella Meadows</div>
@@ -634,12 +641,14 @@
                     
                     // Position the clone in the center of the viewport
                     const viewportHeight = window.innerHeight;
-                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
                     
                     // Center vertically with a maximum height
                     clone.style.maxHeight = (viewportHeight * 0.8) + 'px';
                     clone.style.overflow = 'auto';
-                    clone.style.top = (scrollTop + viewportHeight * 0.1) + 'px';
+                    
+                    // Position in the middle of the viewport regardless of scroll
+                    clone.style.top = '50%';
+                    clone.style.transform = 'translate(-50%, -50%)';
                     
                     // Show the clone and overlay
                     setTimeout(() => {
